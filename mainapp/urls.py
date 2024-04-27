@@ -2,10 +2,11 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import *
 
-router = DefaultRouter()
-router.register(r'quiz', CoursesModelViewSet)
+
 
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('/courses',CoursesAPIView.as_view()),
+    path('/centers',CoursesAPIView.as_view()),
+    path('/vacansies',CoursesAPIView.as_view())
 ]
